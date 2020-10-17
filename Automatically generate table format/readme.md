@@ -1,9 +1,10 @@
 # Automatically generate table format
 ---
 
-效果:使用這EXCEL做資料庫的表格，大約可以使4/5的時間，但因為只有個人使用，沒有優化的很完全，大約是還不錯而已。
+### 效果:
+使用這EXCEL做資料庫的表格，大約可以使4/5的時間，但因為只有個人使用，沒有優化的很完全，大約是還不錯而已。
 
-
+### 使用方法:
 - 在網路上選擇「來源TABLE、欄位、新欄位名稱及資料欄格式
 ![](https://i.imgur.com/QsC6M2y.png)
 - 貼在做表格的程式綠色欄的地方
@@ -36,13 +37,14 @@ CREATE TABLE [dbo].[Category]("
 GO"
 ```
 
-## 而資料表的新增，由MS-SQL自動GEN出來再修改就好了。
+### 而資料表的新增
+由MS-SQL自動GEN出來再修改就好了。
 
 
 
 
 
-## 所用到的公式:	
+### 所用到的公式:	
 - 如果是0就	=IF((B2-A2)=0,"",B2-A2)或儲存格C2：=IF(B2-A2,B2-A2,"")
 - 如果是錯誤就空白	IFERROR(B2/A2,"")
 - 如果是boolean就轉成bit	"=IF(IFERROR(MID(D2,1,(FIND("(",D2)-1)),D2)="boolean","bit",IFERROR(MID(D2,1,(FIND("(",D2)-1)),D2))"
